@@ -2,12 +2,12 @@ import { Component, inject } from '@angular/core';
 import { CocktailService } from './service/cocktail.service';
 import { Cocktail } from './models/cocktail.model';
 import {  RouterOutlet } from '@angular/router';
-
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NgFor],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -23,6 +23,7 @@ export class AppComponent {
   ngOnInit(): void {
     this.cocktailService.getCocktails().subscribe(cocktailsFromJsonFile => {
       this.cocktails = cocktailsFromJsonFile;
+      console.log(this.cocktails)
     });
 
    

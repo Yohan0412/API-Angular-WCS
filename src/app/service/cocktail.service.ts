@@ -6,6 +6,8 @@ import { Cocktail } from '../models/cocktail.model';
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class CocktailService {
 
   private http = inject(HttpClient);
